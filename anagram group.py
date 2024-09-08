@@ -10,33 +10,44 @@ class Solution:
         Clist = list(map(Counter, strs))
         # lists are unhashable so we use tuples
         # counters are unhashable also
-        Fstrs=strs.copy()
+        # Fstrs=strs.copy()
 
         Flist=[]
-        for i,str in enumerate(strs):
-            if str in Fstrs:
-                temp=[]
-                for j in range(len(Clist)):
-                    if Clist[i]==Clist[j]:
-                        temp.append(strs[j])
-                        Fstrs.remove(strs[j])
+        Dic = {}
+        for n,i in enumerate(Clist):
+            temp='0'
+
+            keys=list(i.keys())
+
+            keys.sort()
 
 
-                Flist.append(temp)
-
-
-        return Flist
-
-
-
-
-
-
+            for j in keys:
+                print(j,i[j])
+                temp+=j+str(i[j])
+            if temp not in Dic.keys():
+                Dic[temp]=[strs[n]]
+            else:
+                Dic[temp].append(strs[n])
 
 
 
 
+        # for i,str in enumerate(strs):
+        #     if Flist[i] in Dic.keys():
+        #         Dic[Flist[i]].append(str)
+        #     else :
+        #         Dic[Flist[i]] = [str]
 
+
+
+
+
+
+
+
+
+        return list(Dic.values())
 
 
 print(Solution().groupAnagrams(strs))
