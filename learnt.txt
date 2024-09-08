@@ -2,3 +2,4 @@ you cant add lists/dicts as dictionay keys --> they are unhashable items
 dict is a hashmap
 a  Counter is a sub class of a dict you import it from Collections
 it count the occurance of each element as the value
+free courses: courseclub.me
