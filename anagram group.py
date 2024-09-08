@@ -10,9 +10,9 @@ class Solution:
         Clist = list(map(Counter, strs))
         # lists are unhashable so we use tuples
         # counters are unhashable also
-        # Fstrs=strs.copy()
 
-        Flist=[]
+
+
         Dic = {}
         for n,i in enumerate(Clist):
             temp='0'
@@ -38,8 +38,6 @@ class Solution:
         #         Dic[Flist[i]].append(str)
         #     else :
         #         Dic[Flist[i]] = [str]
-
-
 
 
 
