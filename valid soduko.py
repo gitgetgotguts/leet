@@ -4,33 +4,26 @@ from collections import Counter
 L=np.transpose(x)
 
 
-class Solution:
-    L=[]
-    def isValidSudoku(self, board):
-        for i in range(3):
-            L.append(board[3*i:(i+1)*3])
-            D+str(i)=[]
-        for i in range(L):
-            for j in range(3):
-                D+str(i).append(L[i][j*3,(j+1)*3])
-                print(D+str(i))
+D=[]
+for i in x:
+    j=Counter(i)
+    if '.' in j:
+        j.pop('.')
+    D.append(j)
 
+def Valid_Soduko_Square(a, x, y):
+    s={}
+    k=len(s)
+    for i in range(x*3, x*3 + 3):
+        for j in range(x*3, x*3 + 3):
+            if a[i][j] == '.': continue
+            else:
+                s.append(a[i][j])
+                if len(s) > k: k+= 1
+                else: return False
+    return True
 
+ret=[set(i.values()) for i in D]
 
-
-
-# D=[]
-# for i in L:
-#     j=Counter(i)
-#     if '.' in j:
-#         j.pop('.')
-#     D.append(j)
-# # for i in D :
-# #     if D[i] >1:
-# #         print(False)
-# #
-# ret=[set(i.values()) for i in D]
-# print(ret)
-# print(L)
 
 
